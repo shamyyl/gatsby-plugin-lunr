@@ -56,22 +56,7 @@ const includeLunr = (filename = "search_index.json", fetchOptions = {}) => {
         });
 };
 
-exports.onClientEntry = (
-    args,
-    {
-        languages,
-        filename,
-        fetchOptions,
-        includeOptions = {},
-    }
-) => {
-    enhanceLunr(lunr, languages);
-    if (!Object.keys(includeOptions).length) {
-        includeLunr(filename, fetchOptions);
-    }
-};
-
-exports.onPreRouteUpdate = (
+exports.onRouteUpdate = (
     { location, prevLocation },
     {
         filename,
