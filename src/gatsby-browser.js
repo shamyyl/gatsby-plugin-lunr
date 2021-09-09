@@ -71,7 +71,7 @@ exports.onClientEntry = (
     }
 };
 
-exports.onRouteUpdate = (
+exports.onPreRouteUpdate = (
     { location, prevLocation },
     {
         filename,
