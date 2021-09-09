@@ -44,7 +44,7 @@ exports.onPostBootstrap = ({ getNodes, getNode }, pluginOptions) => {
         ({
             name,
             filterNodes = () => true,
-            customEntries = [],
+            getCustomEntries = () => [],
             plugins = []
         }) => {
             const store = {};
@@ -87,7 +87,7 @@ exports.onPostBootstrap = ({ getNodes, getNode }, pluginOptions) => {
                         }
                     });
 
-                customEntries.forEach((entry, index) => {
+                getCustomEntries().forEach((entry, index) => {
                     const id = `custom_${index}`;
                     this.add({ id, ...entry });
                     store[id] = entry;

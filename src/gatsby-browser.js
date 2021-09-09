@@ -2,7 +2,7 @@
 const lunr = require("lunr");
 const { enhanceLunr } = require("./common.js");
 
-exports.onClientEntry = (
+exports.onRouteUpdate = (
     args,
     { languages, filename = "search_index.json", fetchOptions = {} }
 ) => {
